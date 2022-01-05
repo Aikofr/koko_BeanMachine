@@ -16,23 +16,23 @@ INSERT INTO `jobs` (name, label, whitelisted) VALUES
 ;
 
 INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_female) VALUES
-  ('cafe', 0, 'apprenti', 'Apprenti', 100, '{}', '{}'),
+  ('cafe', 0, 'apprenti', 'Apprenti Barista', 100, '{}', '{}'),
   ('cafe', 1, 'barista', 'Barista', 100, '{}', '{}'),
   ('cafe', 2, 'viceboss', 'Co-gérant', 100, '{}', '{}'),
   ('cafe', 3, 'boss', 'Gérant', 100, '{}', '{}')
 
 
 INSERT INTO `items` (`name`, `label`, `weight`) VALUES  
-    ('grainecafe', 'Graine de cafe', 2),
+    ('grainecafe', 'graine de cafe', 2),
     ('expresso', 'Expresso', 1)
     ('lungo', 'Lungo', 1),
-    ('Caffé Latte', 'caffelatte', 1),
-    ('Iced Latte', 'icelatte', 1),
-    ('Macchiato', 'macchiato', 1),
-    ('Caramel Macchiato', 'macchiatocara', 1),
-    ('Cappuccino', 'cappuccino', 1),
-    ('Iced Cappuccino', 'cappuccinoice', 1),
-    ('Pain au chocolat', 'painchoco', 1),
-    ('Croissant', 'croissant', 1),
-    ('Torsade Chocolat', 'torsadechoco', 1),
+    ('caffelatte', 'Caffé Latte', 1),
+    ( 'icelatte', 'Iced Latte', 1),
+    ('macchiato', 'Macchiato', 1),
+    ('macchiatocara', 'Caramel Macchiato', 1),
+    ('cappuccino', 'Cappuccino', 1),
+    ('cappuccinoice', 'Iced Cappuccino', 1),
+    ('painchoco', 'Pain au chocolat', 1),
+    ('croissant', 'Croissant', 1),
+    ('torsadechoco', 'Torsade Chocolat', 1),
 ;
