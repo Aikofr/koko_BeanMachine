@@ -1,8 +1,9 @@
 #koko_BeanMachine
 FOR ESX : tested on es_extended v1.final - Artefact 5104
 
-
+--
 francais
+--
 Job BeanMachine pour fivem.
 90% RageUi
 
@@ -31,8 +32,9 @@ Entièrement et facilement configurable grace à plein de petites annotations.
 Un souci ? Rejoins le koko discord !
 
 
-
+--
 English
+--
 Job BeanMachine for fivem.
 90% RageUi
 
