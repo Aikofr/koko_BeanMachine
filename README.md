@@ -15,9 +15,8 @@ Job BeanMachine pour fivem.
 - Vous pouvez acheter un café aux machines BeanMachine présentes un peu partout sur la map. 
 - Il vous coute 100$ et l'argent et automatiquement versé à l'entreprise.
 
-Garage : 
-- 2 sorties véhicules
 
+- 2 sorties véhicules
 - Coffre
 - Action Patron
 - Menu F6 avec annonce / facture
@@ -46,9 +45,8 @@ Job BeanMachine for fivem.
 - You can buy a coffee from the BeanMachine machines found all over the map.
 - It costs you $ 100 and the money and automatically paid out to the business.
 
-Garage :
-- 2 vehicle exits
 
+- 2 vehicle exits
 - Chest
 - Boss Action
 - Menu F6 with announcement / invoice
