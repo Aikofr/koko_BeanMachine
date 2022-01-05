@@ -1,6 +1,8 @@
-FOR ESX : tested on es_extended v1.final - Artefact 5104
+FOR ESX : tested on es_extended v1.final - Artefact 5104  
+  le mapping est celui ci : https://www.youtube.com/watch?v=uO9t050-DV0  
+  Vous pouvez faire sans, il vous suffira de bouger les points
+  
 
---
 francais
 --
 Job BeanMachine pour fivem.
@@ -26,11 +28,12 @@ Job BeanMachine pour fivem.
 - **Images inventaire déjà présentes**
 - **copier / coller le fichier 'utilisable' dans votre esx_basicneeds pour rendre les items utilisables.**
 
-Entièrement et facilement configurable grace à plein de petites annotations.
+- Entièrement et facilement configurable grace à plein de petites annotations.  
+  
 Un souci ? Rejoins le **koko discord** !
 
 
---
+
 English
 --
 Job BeanMachine for fivem.
@@ -57,5 +60,6 @@ Job BeanMachine for fivem.
 - **copy / paste the 'utilisable' file into your esx_basicneeds to make the items usable.**
 
 
-Entirely and easily configurable thanks to lots of small annotations.
+- Entirely and easily configurable thanks to lots of small annotations.
+    
 A concern ? Join the **koko discord**!
