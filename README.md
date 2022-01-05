@@ -1,4 +1,3 @@
-#koko_BeanMachine
 FOR ESX : tested on es_extended v1.final - Artefact 5104
 
 --
