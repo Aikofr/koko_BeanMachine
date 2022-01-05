@@ -12,8 +12,8 @@ Job BeanMachine pour fivem.
 - Vente d'expresso
 
 **Machine à café utilisable** : 
-Vous pouvez acheter un café aux machines BeanMachine présentes un peu partout sur la map. 
-Il vous coute 100$ et l'argent et automatiquement versé à l'entreprise.
+- Vous pouvez acheter un café aux machines BeanMachine présentes un peu partout sur la map. 
+- Il vous coute 100$ et l'argent et automatiquement versé à l'entreprise.
 
 Garage : 
 - 2 sorties véhicules
@@ -43,8 +43,8 @@ Job BeanMachine for fivem.
 - Espresso sale
 
 **Usable coffee machine:**
-You can buy a coffee from the BeanMachine machines found all over the map.
-It costs you $ 100 and the money and automatically paid out to the business.
+- You can buy a coffee from the BeanMachine machines found all over the map.
+- It costs you $ 100 and the money and automatically paid out to the business.
 
 Garage :
 - 2 vehicle exits
