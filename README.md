@@ -2,7 +2,7 @@
 FOR ESX : tested on es_extended v1.final - Artefact 5104
 
 
-#----- fr -----#
+-- francais--
 Job BeanMachine pour fivem.
 90% RageUi
 
@@ -32,7 +32,7 @@ Un souci ? Rejoins le koko discord !
 
 
 
-#----- En -----#
+--English--
 Job BeanMachine for fivem.
 90% RageUi
 
