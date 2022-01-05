@@ -8,8 +8,8 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 TriggerEvent('esx_society:registerSociety', 'cafe', 'cafe', 'society_cafe', 'society_cafe', 'society_cafe', {type = 'public'})
 
-RegisterServerEvent('esx_cafejob:annonceopen')--Changer l'annonce d'ouverture
-AddEventHandler('esx_cafejob:annonceopen', function (target)
+RegisterServerEvent('koko_beanmachine:annonceopen')--Changer l'annonce d'ouverture
+AddEventHandler('koko_beanmachine:annonceopen', function (target)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
     local xPlayers = ESX.GetPlayers()
@@ -19,8 +19,8 @@ AddEventHandler('esx_cafejob:annonceopen', function (target)
     end
 end)
 
-RegisterServerEvent('esx_cafejob:annoncefermer') --Changer l'annonce de fermeture
-AddEventHandler('esx_cafejob:annoncefermer', function (target)
+RegisterServerEvent('koko_beanmachine:annoncefermer') --Changer l'annonce de fermeture
+AddEventHandler('koko_beanmachine:annoncefermer', function (target)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
     local xPlayers = ESX.GetPlayers()
@@ -30,8 +30,8 @@ AddEventHandler('esx_cafejob:annoncefermer', function (target)
     end 
 end)
 
-RegisterServerEvent('esx_cafe:annoncerecrutement') --Changer l'annonce de recrutement
-AddEventHandler('esx_cafe:annoncerecrutement', function (target)
+RegisterServerEvent('koko_beanmachine:annoncerecrutement') --Changer l'annonce de recrutement
+AddEventHandler('koko_beanmachine:annoncerecrutement', function (target)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
     local xPlayers = ESX.GetPlayers()
@@ -41,8 +41,8 @@ AddEventHandler('esx_cafe:annoncerecrutement', function (target)
     end 
 end)
 
-RegisterServerEvent('esx_cafejob:patronmess')
-AddEventHandler('esx_cafejob:patronmess', function(PriseOuFin, message)
+RegisterServerEvent('koko_beanmachine:patronmess')
+AddEventHandler('koko_beanmachine:patronmess', function(PriseOuFin, message)
     local _source = source
     local _raison = PriseOuFin
     local xPlayer = ESX.GetPlayerFromId(_source)
@@ -52,7 +52,7 @@ AddEventHandler('esx_cafejob:patronmess', function(PriseOuFin, message)
     for i = 1, #xPlayers, 1 do
         local thePlayer = ESX.GetPlayerFromId(xPlayers[i])
         if thePlayer.job.name == 'cafe' then
-            TriggerClientEvent('esx_cafejob:infoservice', xPlayers[i], _raison, name, message)
+            TriggerClientEvent('koko_beanmachine:infoservice', xPlayers[i], _raison, name, message)
         end
     end
 end)
@@ -62,8 +62,8 @@ end)
 
 
 --------COFFRE
-RegisterServerEvent('esx_cafejob:getStockItem')
-AddEventHandler('esx_cafejob:getStockItem', function(itemName, count)
+RegisterServerEvent('koko_beanmachine:getStockItem')
+AddEventHandler('koko_beanmachine:getStockItem', function(itemName, count)
     local xPlayer = ESX.GetPlayerFromId(source)
 
     TriggerEvent('esx_addoninventory:getSharedInventory', 'society_cafe', function(inventory)
@@ -80,15 +80,15 @@ AddEventHandler('esx_cafejob:getStockItem', function(itemName, count)
     end)
 end)
 
-ESX.RegisterServerCallback('esx_cafejob:getStockItems', function(source, cb)
+ESX.RegisterServerCallback('koko_beanmachine:getStockItems', function(source, cb)
 
     TriggerEvent('esx_addoninventory:getSharedInventory', 'society_cafe', function(inventory)
         cb(inventory.items)
     end)
 end)
 
-RegisterServerEvent('esx_cafejob:putStockItems')
-AddEventHandler('esx_cafejob:putStockItems', function(itemName, count)
+RegisterServerEvent('koko_beanmachine:putStockItems')
+AddEventHandler('koko_beanmachine:putStockItems', function(itemName, count)
     local xPlayer = ESX.GetPlayerFromId(source)
 
     TriggerEvent('esx_addoninventory:getSharedInventory', 'society_cafe', function(inventory)
@@ -105,7 +105,7 @@ AddEventHandler('esx_cafejob:putStockItems', function(itemName, count)
     end)
 end)
 
-ESX.RegisterServerCallback('esx_cafejob:getPlayerInventory', function(source, cb)
+ESX.RegisterServerCallback('koko_beanmachine:getPlayerInventory', function(source, cb)
     local xPlayer    = ESX.GetPlayerFromId(source)
     local items      = xPlayer.inventory
 
@@ -115,7 +115,7 @@ ESX.RegisterServerCallback('esx_cafejob:getPlayerInventory', function(source, cb
 end)
 
 
-ESX.RegisterServerCallback('esx_cafejob:inventairejoueur', function(source, cb)
+ESX.RegisterServerCallback('koko_beanmachine:inventairejoueur', function(source, cb)
     local xPlayer = ESX.GetPlayerFromId(source)
     local items   = xPlayer.inventory
 
@@ -125,13 +125,13 @@ end)
 
 
 --Machine a café
-RegisterServerEvent('esx_tgo_watercoolers:refillThirst')
-AddEventHandler('esx_tgo_watercoolers:refillThirst', function()
+RegisterServerEvent('koko_beanmachine:refillThirst')
+AddEventHandler('koko_beanmachine:refillThirst', function()
 	TriggerClientEvent('esx_status:add', source, 'thirst', 90000)
 end)
 
-RegisterServerEvent('esx_tgo_watercoolers:lamoney')
-AddEventHandler('esx_tgo_watercoolers:lamoney', function()
+RegisterServerEvent('koko_beanmachine:lamoney')
+AddEventHandler('koko_beanmachine:lamoney', function()
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 
@@ -153,7 +153,7 @@ end)
 
 
 
-ESX.RegisterServerCallback('esx_tgo_watercoolers:lamoney', function(source, cb)
+ESX.RegisterServerCallback('koko_beanmachine:lamoney', function(source, cb)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 
@@ -220,8 +220,8 @@ local function Transfo(source)
 end
 --FIN TRANSFO
 
-RegisterServerEvent('esx_cafejob:startHarvest')
-AddEventHandler('esx_cafejob:startHarvest', function()
+RegisterServerEvent('koko_beanmachine:startHarvest')
+AddEventHandler('koko_beanmachine:startHarvest', function()
 	local _source = source
 	PlayersHarvesting[_source] = true
     TriggerClientEvent('dopeNotify2:Alert', _source, "", "Récolte de Graine de café", 3000, 'info') --Si vous utilisez dopeNotify2
@@ -229,16 +229,16 @@ AddEventHandler('esx_cafejob:startHarvest', function()
 	Harvest(source)
 end)
 
-RegisterServerEvent('esx_cafejob:stopHarvest')
-AddEventHandler('esx_cafejob:stopHarvest', function()
+RegisterServerEvent('koko_beanmachine:stopHarvest')
+AddEventHandler('koko_beanmachine:stopHarvest', function()
 	local _source = source
 	PlayersHarvesting[_source] = false
 end)
 
 
 -- TRANSFO
-RegisterServerEvent('esx_cafejob:starttransfo')
-AddEventHandler('esx_cafejob:starttransfo', function()
+RegisterServerEvent('koko_beanmachine:starttransfo')
+AddEventHandler('koko_beanmachine:starttransfo', function()
 	local _source = source
 	PlayersTransfo[_source] = true
     TriggerClientEvent('dopeNotify2:Alert', _source, "", "Préparation de café", 3000, 'info') --Si vous utilisez dopeNotify2
@@ -246,8 +246,8 @@ AddEventHandler('esx_cafejob:starttransfo', function()
 	Transfo(source)
 end)
 
-RegisterServerEvent('esx_cafejob:stoptransfo')
-AddEventHandler('esx_cafejob:stoptransfo', function()
+RegisterServerEvent('koko_beanmachine:stoptransfo')
+AddEventHandler('koko_beanmachine:stoptransfo', function()
 	local _source = source
 	PlayersTransfo[_source] = false
 end)
@@ -284,8 +284,8 @@ local function Sell(source)
 	end)
 end
 
-RegisterServerEvent('esx_cafejob:startVente')
-AddEventHandler('esx_cafejob:startVente', function()
+RegisterServerEvent('koko_beanmachine:startVente')
+AddEventHandler('koko_beanmachine:startVente', function()
 	print ("DEBUG : START SELL")
 	local _source = source
 	if PlayersSelling[_source] == false then
@@ -298,8 +298,8 @@ AddEventHandler('esx_cafejob:startVente', function()
 	end
 end)
 
-RegisterServerEvent('esx_cafejob:stopVente')
-AddEventHandler('esx_cafejob:stopVente', function()
+RegisterServerEvent('koko_beanmachine:stopVente')
+AddEventHandler('koko_beanmachine:stopVente', function()
 	local _source = source
 	if PlayersSelling[_source] == true then
 		PlayersSelling[_source]=false

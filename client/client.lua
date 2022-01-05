@@ -144,6 +144,16 @@ Citizen.CreateThread(function()
                 end
             end)
 
+            --Pour rajouter un véhicule
+            -- RageUI.Button("Baller", "Pour sortir un Baller.", {RightLabel = "→→→"},true, function(Hovered, Active, Selected) -- Changer le titre ici
+            --     if (Selected) then
+            --     ESX.ShowAdvancedNotification("Koda la garagiste", "La voiture arrive dans quelques instant..", "", "CHAR_BIKESITE", 1)
+            --     Citizen.Wait(2000)
+            --     spawnuniCar("baller") --Changer le véhicule ici
+            --     ESX.ShowAdvancedNotification("Koda la garagiste", "Abime pas la voiture grosse folle !", "", "CHAR_BIKESITE", 1)
+            --     end
+            -- end)
+
         end, function()
         end)
             Citizen.Wait(0)
@@ -292,18 +302,31 @@ end)
 
 --menu f6
 local societycafemoney = nil
-RMenu.Add('cafef6', 'main4', RageUI.CreateMenu("Menu cafe", "Menu Cafe"))
+RMenu.Add('cafef6', 'main4', RageUI.CreateMenu("Menu cafe", "Pour mettre des factures"))
 RMenu.Add('cafef6', 'patron', RageUI.CreateSubMenu(RMenu:Get('cafef6', 'main4'), "Option patron", "Option disponible pour le patron"))
 
 Citizen.CreateThread(function()
     while true do
-    	
 
         RageUI.IsVisible(RMenu:Get('cafef6', 'main4'), true, true, true, function()
         if ESX.PlayerData.job and ESX.PlayerData.job.name == 'cafe' and ESX.PlayerData.job.grade_name == 'boss' then
         RageUI.Button("Option patron", "Option disponible pour le patron", {RightLabel = "→→→"},true, function()
         end, RMenu:Get('cafef6', 'patron'))
         end
+
+        RageUI.Button("Facture", "Pour mettre une facture à la personne proche de toi", {RightLabel = "→→→"}, true, function(Hovered, Active, Selected)
+            if (Selected) then
+
+                local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+                if closestPlayer == -1 or closestDistance > 3.0 then
+                    ESX.ShowNotification('Personne autour')
+                else
+                    local amount = KeyboardInput('Veuillez saisir le montant de la facture', '', 4)
+                    TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_cafe', 'cafe', amount)
+                end
+
+        end
+        end)
 
         RageUI.Button("Annonce ouvert", "Pour annoncer aux gens que le cafe est ouvert", {RightLabel = "→→→"}, true, function(Hovered, Active, Selected)
                 if (Selected) then   
@@ -322,13 +345,13 @@ Citizen.CreateThread(function()
             RageUI.Button("Montant disponible dans la société :", nil, {RightLabel = "$" .. societycafemoney}, true, function()
             end)
         end
-        RageUI.Button("Message aux cafe", "Pour écrire un message aux employés", {RightLabel = "→"}, true, function(Hovered, Active, Selected)
-                if (Selected) then   
-                local info = 'patron'
-                local message = KeyboardInput('Veuillez mettre le messsage à envoyer', '', 40)
-				TriggerServerEvent('koko_beanmachine:patronmess', info, message)
-            end
-            end)
+        -- RageUI.Button("Message aux cafe", "Pour écrire un message aux employés", {RightLabel = "→"}, true, function(Hovered, Active, Selected)
+        --         if (Selected) then   
+        --         local info = 'patron'
+        --         local message = KeyboardInput('Veuillez mettre le messsage à envoyer', '', 40)
+		-- 		TriggerServerEvent('koko_beanmachine:patronmess', info, message)
+        --     end
+        --     end)
         RageUI.Button("Annonce recrutement", "Pour annoncer des recrutements au cafe", {RightLabel = "→"}, true, function(Hovered, Active, Selected)
                 if (Selected) then   
 				TriggerServerEvent('koko_beanmachine:annoncerecrutement')
@@ -552,13 +575,13 @@ Citizen.CreateThread(function()
                     ESX.Game.Utils.DrawText3D(loc, 'Presse [~y~G~w~] pour boire un café.', 0.7) --Changer le text 3d ici
                     if IsControlJustReleased(0, 58) then --Changer la touche ici
 
-                        ESX.TriggerServerCallback("esx_tgo_watercoolers:lamoney",  function(cb)
+                        ESX.TriggerServerCallback("koko_beanmachine:lamoney",  function(cb)
                             if cb then 
                                 if not IsAnimated then
                                     prop_name = prop_name or 'prop_food_coffee'
                                     IsAnimated = true
 
-                                    TriggerServerEvent('esx_tgo_watercoolers:refillThirst')
+                                    TriggerServerEvent('koko_beanmachine:refillThirst')
 
                                     Citizen.CreateThread(function()
                                         local playerPed = PlayerPedId()
